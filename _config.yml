@@ -1,0 +1,101 @@
+# ============================================================
+# CONFIGURAÇÃO DO PROJETO PERNAMBUCO
+# ============================================================
+
+title: Pernambuco
+
+description: >-
+  História, política, biografias e documentação dos municípios
+  do estado de Pernambuco.
+
+author: Aquila Leite Mendes
+
+lang: pt-BR
+
+timezone: America/Recife
+
+
+# ============================================================
+# JEKYLL
+# ============================================================
+
+markdown: kramdown
+
+permalink: pretty
+
+encoding: utf-8
+
+
+# ============================================================
+# URL DO PROJETO
+# ============================================================
+
+url: "https://aquilaleitemendes.github.io"
+
+baseurl: "/Pernambuco"
+
+
+# ============================================================
+# DIRETÓRIOS
+# ============================================================
+
+source: .
+
+destination: _site
+
+includes_dir: _includes
+
+layouts_dir: _layouts
+
+collections_dir: .
+
+
+# ============================================================
+# EXCLUSÕES
+# ============================================================
+
+exclude:
+  - .git/
+  - .github/
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules/
+  - vendor/
+  - _site/
+
+
+# ============================================================
+# HTML / LIQUID
+# ============================================================
+
+defaults:
+
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+
+# ============================================================
+# CONFIGURAÇÕES DO PROJETO
+# ============================================================
+
+project:
+  name: Pernambuco
+  author: Aquila Leite Mendes
+  language: Português brasileiro
+
+  repository: AquilaLeiteMendes/Pernambuco
+
+
+# ============================================================
+# OPÇÕES DE DESENVOLVIMENTO
+# ============================================================
+
+strict_front_matter: true
+
+future: false
+
+show_drafts: false
