@@ -1,1 +1,100 @@
+:root {
+  --banner-bg: #39339a;
+  --banner-text: #ffffff;
 
+  --banner-max-width: 1200px;
+  --banner-padding-x: 56px;
+  --banner-padding-y: 26px;
+
+  --banner-title-size: 34px;
+  --banner-description-size: 17px;
+
+  --banner-title-weight: 700;
+  --banner-description-weight: 400;
+
+  --banner-title-spacing: 24px;
+}
+
+/* Banner */
+
+.bio-banner {
+  width: 100%;
+  background: var(--banner-bg);
+  color: var(--banner-text);
+}
+
+.bio-banner__content {
+  width: 100%;
+  max-width: var(--banner-max-width);
+  margin: 0 auto;
+
+  padding:
+    var(--banner-padding-y)
+    var(--banner-padding-x);
+}
+
+/* Título */
+
+.bio-banner__title {
+  margin: 0 0 var(--banner-title-spacing);
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: var(--banner-title-size);
+  font-weight: var(--banner-title-weight);
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+/* Descrição */
+
+.bio-banner__description {
+  max-width: 1050px;
+  margin: 0;
+
+  font-family:
+    Inter,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+
+  font-size: var(--banner-description-size);
+  font-weight: var(--banner-description-weight);
+  line-height: 1.45;
+}
+
+/* Responsividade */
+
+@media (max-width: 768px) {
+  :root {
+    --banner-padding-x: 28px;
+    --banner-padding-y: 24px;
+
+    --banner-title-size: 28px;
+    --banner-description-size: 16px;
+
+    --banner-title-spacing: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --banner-padding-x: 20px;
+    --banner-padding-y: 22px;
+
+    --banner-title-size: 24px;
+    --banner-description-size: 15px;
+  }
+}
