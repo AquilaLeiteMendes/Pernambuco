@@ -1,0 +1,135 @@
+/* ===================================================================
+   Biografia Card
+   Componente usado nas páginas de Prefeitos (e outras autoridades)
+   para exibir foto, período de mandato e biografia.
+   =================================================================== */
+
+.bio-card {
+  --bio-azul-escuro: #3730a3;
+  --bio-azul-borda: #4338ca;
+  --bio-lilas-bg: #e0e0fb;
+  --bio-azul-claro-bg: #dbeeff;
+  --bio-cinza-bg: #f4f5f8;
+  --bio-cinza-texto: #3f3f46;
+
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+  max-width: 960px;
+  margin: 2rem auto;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+/* ---------- Coluna da foto ---------- */
+
+.bio-card__photo-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.bio-card__photo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #f2c98a;
+  margin-bottom: 1rem;
+}
+
+.bio-card__nome {
+  color: var(--bio-azul-escuro);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 0 0 0.25rem;
+}
+
+.bio-card__periodo {
+  color: var(--bio-cinza-texto);
+  font-size: 0.95rem;
+  margin: 0 0 1.25rem;
+}
+
+.bio-card__anos {
+  display: flex;
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.bio-card__ano {
+  flex: 1;
+  border-radius: 10px;
+  padding: 0.9rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.bio-card__ano--inicio {
+  background: var(--bio-lilas-bg);
+}
+
+.bio-card__ano--fim {
+  background: var(--bio-azul-claro-bg);
+}
+
+.bio-card__ano-numero {
+  color: var(--bio-azul-escuro);
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.bio-card__ano-label {
+  color: var(--bio-cinza-texto);
+  font-size: 0.85rem;
+}
+
+/* ---------- Coluna de conteúdo ---------- */
+
+.bio-card__titulo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--bio-azul-escuro);
+  font-size: 1.6rem;
+  font-weight: 800;
+  margin: 0.4rem 0 1rem;
+}
+
+.bio-card__icone {
+  width: 26px;
+  height: 26px;
+  color: var(--bio-azul-escuro);
+  flex-shrink: 0;
+}
+
+.bio-card__texto {
+  background: var(--bio-cinza-bg);
+  border-left: 5px solid var(--bio-azul-borda);
+  border-radius: 8px;
+  padding: 1.5rem 1.75rem;
+  color: var(--bio-cinza-texto);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.bio-card__texto p {
+  margin: 0;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 700px) {
+  .bio-card {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .bio-card__photo {
+    width: 150px;
+    height: 150px;
+  }
+}
