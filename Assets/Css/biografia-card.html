@@ -1,0 +1,59 @@
+<!--
+  Uso (dentro de qualquer página .md, ex: Araripina/Prefeitos/Nome.md):
+
+  {% include biografia-card.html
+    foto="/Assets/prefeitos/valdemir-batista.jpg"
+    nome="Valdemir Batista de Souza"
+    inicio="1989"
+    fim="1992"
+    texto="Dr. Valdemir Batista de Souza, carinhosamente chamado de Dr. Mimi por todos, foi médico, vereador por três mandatos..."
+  %}
+
+  Todos os parâmetros são obrigatórios, exceto "texto", que também pode
+  vir do corpo do Markdown (nesse caso, omita o parâmetro e escreva o
+  texto normalmente abaixo do include).
+-->
+
+<div class="bio-card">
+  <div class="bio-card__photo-col">
+    <img
+      class="bio-card__photo"
+      src="{{ include.foto }}"
+      alt="Foto de {{ include.nome }}"
+      loading="lazy"
+    >
+
+    <h3 class="bio-card__nome">{{ include.nome }}</h3>
+    <p class="bio-card__periodo">{{ include.inicio }} - {{ include.fim }}</p>
+
+    <div class="bio-card__anos">
+      <div class="bio-card__ano bio-card__ano--inicio">
+        <span class="bio-card__ano-numero">{{ include.inicio }}</span>
+        <span class="bio-card__ano-label">Início</span>
+      </div>
+      <div class="bio-card__ano bio-card__ano--fim">
+        <span class="bio-card__ano-numero">{{ include.fim }}</span>
+        <span class="bio-card__ano-label">Fim</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="bio-card__conteudo">
+    <h2 class="bio-card__titulo">
+      <svg class="bio-card__icone" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="9" cy="7" r="3.25" stroke="currentColor" stroke-width="1.8"/>
+        <path d="M3.5 18c0-3.038 2.462-5.5 5.5-5.5s5.5 2.462 5.5 5.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        <path d="M15.5 5h5M15.5 9h5M15.5 13h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+      Biografia
+    </h2>
+
+    <div class="bio-card__texto">
+      {% if include.texto %}
+        <p>{{ include.texto }}</p>
+      {% else %}
+        {{ content }}
+      {% endif %}
+    </div>
+  </div>
+</div>
