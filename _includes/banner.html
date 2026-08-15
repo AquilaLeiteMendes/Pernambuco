@@ -1,2 +1,15 @@
-<!-- Dentro do seu _includes/banner.html -->
-<text ...>{{ include.titulo }}</text>
+<header class="bio-banner">
+  <div class="bio-banner__content">
+
+    <h1 class="bio-banner__title">
+      {{ include.titulo }}
+    </h1>
+
+    {% if include.descricao %}
+      <p class="bio-banner__description">
+        {{ include.descricao }}
+      </p>
+    {% endif %}
+
+  </div>
+</header>
