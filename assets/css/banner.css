@@ -1,0 +1,40 @@
+/* assets/css/banner.css
+   Estilos do banner e ajustes básicos para o layout principal.
+*/
+
+.bio-banner {
+  background: linear-gradient(180deg, #8b0000 0%, #b22222 100%);
+  color: #fff;
+  padding: 48px 0;
+}
+
+.bio-banner__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.bio-banner__title {
+  font-size: 2rem;
+  margin: 0 0 8px 0;
+  line-height: 1.1;
+}
+
+.bio-banner__description {
+  margin: 0;
+  opacity: 0.95;
+  font-size: 1rem;
+}
+
+/* Pequenos ajustes gerais para harmonizar com estilos inline existentes */
+.page-content h1,
+.page-content h2,
+.page-content h3 {
+  color: #111;
+}
+
+@media (max-width: 768px) {
+  .bio-banner__title {
+    font-size: 1.5rem;
+  }
+}
