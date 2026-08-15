@@ -2,20 +2,196 @@
 <html lang="pt-BR">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>{{ page.title }}</title>
+  <!-- ==================================================
+       CONFIGURAÇÕES BÁSICAS
+       ================================================== -->
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="description"
+    content="{{ page.description | default: site.description | default: 'História, política e documentação dos municípios de Pernambuco.' }}"
+  >
+
+  <meta name="author" content="{{ site.author | default: 'Aquila Leite Mendes' }}">
+
+  <title>
+    {% if page.title %}
+      {{ page.title }} | {{ site.title | default: "Pernambuco" }}
+    {% else %}
+      {{ site.title | default: "Pernambuco" }}
+    {% endif %}
+  </title>
+
+
+  <!-- ==================================================
+       ESTILOS
+       ================================================== -->
 
   <link
     rel="stylesheet"
     href="{{ '/assets/css/banner.css' | relative_url }}"
   >
+
+  <style>
+
+    /* ================================================
+       VARIÁVEIS GERAIS
+       ================================================ */
+
+    :root {
+      --page-background: #ffffff;
+      --page-text: #222222;
+      --page-muted: #666666;
+
+      --content-width: 1200px;
+
+      --font-family:
+        Inter,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    }
+
+
+    /* ================================================
+       RESET
+       ================================================ */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      background: var(--page-background);
+      color: var(--page-text);
+
+      font-family: var(--font-family);
+      line-height: 1.6;
+    }
+
+
+    /* ================================================
+       CONTEÚDO
+       ================================================ */
+
+    .page-content {
+      width: 100%;
+      max-width: var(--content-width);
+
+      margin: 0 auto;
+
+      padding: 40px 56px;
+    }
+
+
+    /* ================================================
+       LINKS
+       ================================================ */
+
+    a {
+      color: inherit;
+    }
+
+
+    /* ================================================
+       RODAPÉ
+       ================================================ */
+
+    .site-footer {
+      max-width: var(--content-width);
+
+      margin: 60px auto 0;
+
+      padding: 24px 56px;
+
+      border-top: 1px solid #e5e5e5;
+
+      color: var(--page-muted);
+
+      font-size: 14px;
+    }
+
+
+    /* ================================================
+       RESPONSIVIDADE
+       ================================================ */
+
+    @media (max-width: 768px) {
+
+      .page-content {
+        padding: 30px 28px;
+      }
+
+      .site-footer {
+        padding: 24px 28px;
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .page-content {
+        padding: 24px 20px;
+      }
+
+      .site-footer {
+        padding: 20px;
+      }
+
+    }
+
+  </style>
+
 </head>
+
 
 <body>
 
-  {{ content }}
+
+  <!-- ==================================================
+       CONTEÚDO DA PÁGINA
+       ================================================== -->
+
+  <main class="page-content">
+
+    {{ content }}
+
+  </main>
+
+
+  <!-- ==================================================
+       RODAPÉ
+       ================================================== -->
+
+  <footer class="site-footer">
+
+    <p>
+      Projeto Pernambuco
+      {% if site.time %}
+        · {{ site.time | date: "%Y" }}
+      {% endif %}
+    </p>
+
+  </footer>
+
 
 </body>
 
